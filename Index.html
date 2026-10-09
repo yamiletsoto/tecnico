@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Técnico Informático | Diseño Web</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f7ff;
+    color: #183153;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #061e53, #0879e8, #29c5ff);
+    color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+header p {
+    font-size: 18px;
+    color: #e0f5ff;
+}
+
+nav {
+    background: #ffffff;
+    padding: 18px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 12px #b5d5f5;
+}
+
+nav a {
+    text-decoration: none;
+    color: #0755b5;
+    font-weight: bold;
+    margin: 0 15px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00aaff;
+}
+
+.hero {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #e0f2ff, #f7fbff);
+}
+
+.hero img {
+    width: 85%;
+    max-width: 650px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px #a5c9ef;
+    margin-bottom: 25px;
+}
+
+.hero h2 {
+    font-size: 32px;
+    color: #0647a6;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    max-width: 750px;
+    margin: 0 auto 25px;
+    font-size: 17px;
+}
+
+.boton {
+    display: inline-block;
+    background: linear-gradient(90deg, #0755c9, #08a9f5);
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 5px 12px #a5c9ef;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px #82b9ed;
+}
+
+section {
+    padding: 55px 7%;
+}
+
+.titulo {
+    text-align: center;
+    color: #0755b5;
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #5b7190;
+    margin-bottom: 35px;
+}
+
+.servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background: white;
+    padding: 28px;
+    border-radius: 18px;
+    border: 1px solid #d4e8ff;
+    box-shadow: 0 5px 18px #d6e8fa;
+    transition: 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 25px #b5d8fa;
+}
+
+.icono {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.tarjeta h3 {
+    color: #0755b5;
+    margin-bottom: 12px;
+}
+
+.tarjeta ul {
+    padding-left: 20px;
+}
+
+.tarjeta li {
+    margin-bottom: 8px;
+}
+
+.beneficios {
+    background: linear-gradient(135deg, #073b8c, #087fe0);
+    color: white;
+}
+
+.beneficios .titulo {
+    color: white;
+}
+
+.beneficios .subtitulo {
+    color: #d6edff;
+}
+
+.beneficios .tarjeta {
+    text-align: center;
+    color: #183153;
+    border: none;
+}
+
+.precio {
+    font-size: 25px;
+    font-weight: bold;
+    color: #0784e8;
+    margin-top: 10px;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #d2e5f9;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background: #0755b5;
+    color: white;
+    padding: 17px;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #dbeaff;
+}
+
+tr:nth-child(even) {
+    background: #edf6ff;
+}
+
+form {
+    background: white;
+    max-width: 750px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #d2e5f9;
+}
+
+form label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+    color: #0755b5;
+}
+
+form input,
+form select,
+form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #b8d7f7;
+    border-radius: 9px;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    outline: 2px solid #38aaff;
+}
+
+form button {
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.contacto {
+    text-align: center;
+    background: #e1f1ff;
+}
+
+.contacto p {
+    margin: 12px;
+}
+
+footer {
+    background: #061e53;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 27px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 6px;
+        font-size: 14px;
+    }
+
+    .hero img {
+        height: 220px;
+    }
+
+    .hero h2 {
+        font-size: 25px;
+    }
+
+    section {
+        padding: 40px 5%;
+    }
+
+    form {
+        padding: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>💻 TECNOLOGÍA Y DISEÑO WEB</h1>
+    <p>Soluciones inteligentes para llevar tu negocio al siguiente nivel</p>
+</header>
+
+<nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#ventajas">Ventajas</a>
+    <a href="#precios">Precios</a>
+    <a href="#contacto">Contacto</a>
+</nav>
+
+<div class="hero" id="inicio">
+    <img
+        src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000&auto=format&fit=crop&q=80"
+        alt="Tecnología y componentes electrónicos">
+
+    <h2>Tu tecnología en las mejores manos</h2>
+
+    <p>
+        Ofrecemos servicios de soporte informático, mantenimiento de equipos
+        y creación de páginas web modernas. Trabajamos para ofrecerte
+        soluciones confiables, rápidas y adaptadas a tus necesidades.
+    </p>
+
+    <a href="#contacto" class="boton">🚀 Solicitar información</a>
+</div>
+
+<section id="servicios">
+    <h2 class="titulo">Nuestros servicios</h2>
+    <p class="subtitulo">
+        Tecnología, creatividad y soluciones para ti.
+    </p>
+
+    <div class="servicios">
+
+        <div class="tarjeta">
+            <div class="icono">🖥️</div>
+            <h3>Soporte informático</h3>
+            <ul>
+                <li>Reparación de computadoras y laptops.</li>
+                <li>Mantenimiento preventivo y correctivo.</li>
+                <li>Instalación de sistemas operativos.</li>
+                <li>Eliminación de virus y malware.</li>
+                <li>Actualización de memoria RAM y SSD.</li>
+                <li>Configuración de redes.</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">🌐</div>
+            <h3>Diseño y desarrollo web</h3>
+            <ul>
+                <li>Páginas web modernas y atractivas.</li>
+                <li>Diseño para empresas y emprendimientos.</li>
+                <li>Portafolios profesionales.</li>
+                <li>Tiendas virtuales.</li>
+                <li>Diseño adaptable a celulares.</li>
+                <li>Optimización SEO básica.</li>
+            </ul>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">🔒</div>
+            <h3>Seguridad y mantenimiento</h3>
+            <ul>
+                <li>Protección y limpieza del sistema.</li>
+                <li>Actualización de programas.</li>
+                <li>Copias de seguridad.</li>
+                <li>Diagnóstico de problemas.</li>
+                <li>Optimización del rendimiento.</li>
+                <li>Asesoría tecnológica.</li>
+            </ul>
+        </div>
+
+    </div>
+</section>
+
+<section class="beneficios" id="ventajas">
+    <h2 class="titulo">¿Por qué elegirnos?</h2>
+    <p class="subtitulo">
+        Nuestro compromiso es brindarte una excelente experiencia.
+    </p>
+
+    <div class="servicios">
+
+        <div class="tarjeta">
+            <div class="icono">⚡</div>
+            <h3>Atención rápida</h3>
+            <p>Buscamos soluciones eficientes para tus necesidades tecnológicas.</p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">💎</div>
+            <h3>Transparencia</h3>
+            <p>Información clara sobre los servicios y sus costos.</p>
+        </div>
+
+        <div class="tarjeta">
+            <div class="icono">🤝</div>
+            <h3>Atención personalizada</h3>
+            <p>Soluciones adaptadas a cada cliente y proyecto.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="precios">
+    <h2 class="titulo">Precios orientativos</h2>
+    <p class="subtitulo">
+        Consulta nuestras tarifas y encuentra el servicio que necesitas.
+    </p>
+
+    <div class="tabla-contenedor">
+        <table>
+            <tr>
+                <th>Servicio</th>
+                <th>Precio</th>
+            </tr>
+            <tr>
+                <td>Diagnóstico técnico inicial</td>
+                <td class="precio">Sin costo</td>
+            </tr>
+            <tr>
+                <td>Mantenimiento preventivo de PC</td>
+                <td>Desde $30</td>
+            </tr>
+            <tr>
+                <td>Eliminación de virus y optimización</td>
+                <td>Desde $40</td>
+            </tr>
+            <tr>
+                <td>Instalación de sistema operativo</td>
+                <td>Desde $50</td>
+            </tr>
+            <tr>
+                <td>Diseño web básico</td>
+                <td>Desde $150</td>
+            </tr>
+            <tr>
+                <td>Diseño web profesional</td>
+                <td>Desde $300</td>
+            </tr>
+            <tr>
+                <td>Tienda virtual</td>
+                <td>Desde $500</td>
+            </tr>
+            <tr>
+                <td>Mantenimiento web mensual</td>
+                <td>Desde $50 al mes</td>
+            </tr>
+        </table>
+    </div>
+
+    <p class="subtitulo" style="margin-top:20px;">
+        Los precios son referenciales y pueden variar según el proyecto.
+    </p>
+</section>
+
+<section id="contacto">
+    <h2 class="titulo">Hablemos de tu proyecto</h2>
+    <p class="subtitulo">
+        Completa el formulario para contarnos qué servicio necesitas.
+    </p>
+
+    <form action="#" method="post"
+          onsubmit="event.preventDefault(); alert('Gracias por tu mensaje. Este formulario es una demostración y todavía necesita conectarse a un servicio para enviar los datos.');">
+
+        <label for="nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre"
+               placeholder="Escribe tu nombre" required>
+
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email"
+               placeholder="ejemplo@correo.com" required>
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono"
+               placeholder="Tu número de contacto">
+
+        <label for="servicio">¿Qué servicio necesitas?</label>
+        <select id="servicio" name="servicio" required>
+            <option value="">Selecciona un servicio</option>
+            <option value="soporte">Soporte informático</option>
+            <option value="web">Diseño y desarrollo web</option>
+            <option value="seguridad">Seguridad y mantenimiento</option>
+            <option value="otro">Otro servicio</option>
+        </select>
+
+        <label for="mensaje">Cuéntanos más</label>
+        <textarea id="mensaje" name="mensaje" rows="5"
+                  placeholder="Describe lo que necesitas..."></textarea>
+
+        <button type="submit" class="boton">
+            📩 Enviar consulta
+        </button>
+
+        <button type="reset" class="boton"
+                style="background:#64748b; margin-left:8px;">
+            Limpiar
+        </button>
+    </form>
+</section>
+
+<section class="contacto">
+    <h2 class="titulo">Estamos para ayudarte</h2>
+    <p>📧 Correo: correo@ejemplo.com</p>
+    <p>📱 Teléfono: +593 00 000 0000</p>
+    <p>💙 Gracias por confiar en nuestros servicios tecnológicos.</p>
+</section>
+
+<footer>
+    <p>© 2026 Técnico Informático y Diseño Web</p>
+    <p>Innovación, confianza y tecnología para todos.</p>
+</footer>
+
+</body>
+</html>
